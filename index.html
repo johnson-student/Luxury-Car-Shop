@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Import Font style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Import AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Import Font Awsome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <!-- Import Style.css -->
+    <link rel="stylesheet" href="style.css" />
+    <title>Luxury Car Shop</title>
+  </head>
+  <body>
+    <nav class="nav-bar">
+      <div class="logo"><h1>LOGO</h1></div>
+      <ul class="nav-link">
+        <i class="fa-solid fa-xmark close-btn"></i>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#service">Service</a></li>
+      </ul>
+      <div class="nav-icon">
+        <i class="fa-solid fa-heart heart"></i>
+        <i class="fa-solid fa-cart-shopping"></i>
+        <i class="fa-solid fa-bars hamburger"></i>
+      </div>
+    </nav>
+    <div id="content"></div>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- AOS Link -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,            // animate only once
+        offset: 150,           // wait until scrolling 150px
+      });
+    </script>
+    
+    <script src="main.js"></script>
+
+  </body>
+</html>
