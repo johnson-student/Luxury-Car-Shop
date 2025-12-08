@@ -12,7 +12,7 @@
 }
 body {
   min-height: 100vh;
-  background-color:#212121;
+  background-color:#000000;
   color: var(--primary-color);
   overflow-x: hidden;
 }
@@ -140,7 +140,7 @@ i{
 }
 
 /* Swiper Style */
-.swiper {
+.hero-section .swiper {
   position: absolute;
   top: 60%;
   left: 50%;
@@ -148,36 +148,36 @@ i{
   width: 100%;
 }
 
-.swiper-slide {
+.hero-section .swiper-slide {
   background: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.swiper-slide img {
+.hero-section .swiper-slide img {
   width: 40vw;
   min-width: 320px;
   height: auto;
   object-fit: contain;
   user-select: none;
 }
-.swiper-button-next{
+.hero-section .swiper-button-next{
   right: 7rem;
 }
-.swiper-button-prev{
+.hero-section .swiper-button-prev{
   left: 7rem;
 }
-.swiper-button-next,
-.swiper-button-prev {
+.hero-section .swiper-button-next,
+.hero-section .swiper-button-prev {
   color: black;
   background-color: white;
   width: 2.2rem;
   height: 2.2rem;
   border-radius: 50%;
 }
-.swiper-button-next:after,
-.swiper-button-prev:after {
+.hero-section .swiper-button-next:after,
+.hero-section .swiper-button-prev:after {
   font-size: 1rem;
   font-weight: bold;
 }
@@ -222,4 +222,69 @@ i{
   .hero-section .bottom {
     bottom: 5rem;
   }
+}
+
+.search-box {
+  margin: 30px auto;
+  width: 60%;
+  background: transparent;
+  position: relative;
+  padding: 9px 20px;
+  border-radius: 30px;
+  box-shadow: inset 0px 0px 10px 1px white;
+  display: flex;
+  align-items: center;
+} 
+.search-box input {
+width: 100%;
+background: transparent;
+padding-left: 50px;
+border: none;
+outline: none;
+color: #fff;
+font-size: 16px;
+}
+
+.search-box .icon {
+  position: absolute;
+  left: 10x;   /* put icon left: 10px if you want it on left */
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* so you can click input */}
+
+  .shopSwiper {
+  width: 100%; /* adjust size of swiper container */
+  height: 24rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shopSwiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent !important;
+}
+
+.shopSwiper .swiper-slide img {
+  width: 40%;   /* make car smaller */
+  height: auto; /* keep proportions */
+  object-fit: contain;
+  display: block;
+  filter:brightness(0.8);
+}
+.swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
+  color: #f3f3f3;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.2);
+}
+.swiper-pagination-bullet-active {
+  color: #fff;
+  background: #007aff;
 }
