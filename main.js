@@ -3,11 +3,9 @@ const hamburger = document.querySelector(".hamburger");
 const navLink = document.querySelector(".nav-link");
 const closeBtn = document.querySelector(".close-btn");
 
-
-
 // 2. LOAD PAGE FUNCTION
 function loadPage() {
-  const hash = location.hash.replace("#", "") || "home";
+  const hash = location.hash.replace("#", "") || "shop";
 
   // Highlight active link
   document.querySelectorAll("nav li a").forEach(link => {
@@ -28,7 +26,6 @@ function loadPage() {
       // Home page setup
       if (hash === "home") {
         startCounterAnimation();
-
         // Swiper for home
         if (document.querySelector(".mySwiper")) {
           new Swiper(".mySwiper", {
@@ -200,9 +197,6 @@ cars.forEach((car, i) => {
       card.style.display = name.includes(value) ? "block" : "none";
     });
   } );
-  
-  
-  
 }
 
 

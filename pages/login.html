@@ -1,0 +1,91 @@
+<div
+    class=" fixed inset-0 bg-cover bg-center [background-image:linear-gradient(to_bottom,rgba(0,0,0,0.4),rgba(0,0,0,0.1)),url('https://images.unsplash.com/photo-1503376780353-7e6692767b70')] overflow-auto flex justify-center items-center"
+>
+  <div
+    class= "absolute top-28  bg-white/10 backdrop-blur-md rounded-3xl shadow-2xl w-[90%] max-w-6xl p-6 md:p-10 flex flex-col md:flex-row items-center justify-between "
+  >
+    <!-- LEFT: LOGIN BOX -->
+    <div class="order-2 md:order-1 min-w-[400px] md:w-1/2 flex justify-center">
+      <img src="./assets/images/optimus-prime.png" class="w-[90%]" />
+    </div>
+    <!-- RIGHT: IMAGE -->
+    <div
+      class="order-1 md:order-2 bg-black/20 backdrop-blur-lg p-8 rounded-2xl shadow-xl w-full md:w-[40%]"
+    >
+      <img src="./assets/images/logo.png" width="150px" alt="">
+
+      <h2 class="text-3xl font-bold text-[var(--accent-color)] mb-6">Login</h2>
+
+      <form class="space-y-5">
+        <!-- Email -->
+        <div>
+          <label class="text-[var(--secondary-color)]  text-sm">Email or Username</label>
+          <input
+            type="email"
+            placeholder="username@gmail.com"
+            class="mt-1 text-black w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:var(--accent-color)"
+          />
+        </div>
+
+        <!-- Password -->
+        <div>
+          <label class="text-[var(--secondary-color)]  text-sm">Password</label>
+          <input
+            type="password"
+            placeholder="Password"
+            class="mt-1 w-full px-4 py-2 text-black rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:var(--accent-color)"
+          />
+          <p
+            class="text-sm text-right mt-1 text-blue-400 cursor-pointer hover:underline"
+          >
+            Forgot Password?
+          </p>
+        </div>
+
+        <!-- Sign in -->
+        <button
+          class="w-full py-2 bg-[var(--accent-color)] hover:bg-[var(--accent-color)] text-white rounded-lg font-medium"
+        >
+          Sign In
+        </button>
+
+        <!-- Divider -->
+        <div class="flex items-center gap-4">
+          <div class="flex-1 h-px bg-gray-300"></div>
+          <p class="text-[var(--secondary-color)] text-sm">Or Continue With</p>
+          <div class="flex-1 h-px bg-gray-300"></div>
+        </div>
+
+        <!-- Social buttons -->
+        <div class="flex items-center justify-center gap-4">
+          <button class="bg-white shadow rounded-full p-2">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
+              class="w-5"
+            />
+          </button>
+          <button class="bg-white shadow rounded-full p-2">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg"
+              class="w-5"
+            />
+          </button>
+          <button class="bg-white shadow rounded-full p-2">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg"
+              class="w-5"
+            />
+          </button>
+        </div>
+
+        <p class="text-sm text-center text-[var(--secondary-color)]">
+          Don't have an account yet?
+          <a class="text-blue-400  font-semibold cursor-pointer hover:underline"
+            >Register for free</a
+          >
+        </p>
+      </form>
+    </div>
+
+  </div>
+</div>

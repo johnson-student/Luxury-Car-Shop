@@ -4,11 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Import Font style -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <!-- Import AOS Animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- Import Font Awsome -->
     <link
       rel="stylesheet"
@@ -31,7 +34,12 @@
   </head>
   <body>
     <nav class="nav-bar">
-      <div class="logo"><h1>LOGO</h1></div>
+      <div class="logo">
+        <i class="fa-solid fa-bars hamburger"></i>
+        <a href="#home">
+          <img src="./assets/images/logo.png" alt="LOGO" width="150px" />
+        </a>
+      </div>
       <ul class="nav-link">
         <i class="fa-solid fa-xmark close-btn"></i>
         <li><a href="#home">Home</a></li>
@@ -40,9 +48,9 @@
         <li><a href="#service">Service</a></li>
       </ul>
       <div class="nav-icon">
-        <i class="fa-solid fa-heart heart"></i>
-        <i class="fa-solid fa-cart-shopping"></i>
-        <i class="fa-solid fa-bars hamburger"></i>
+        <a href="#wistList"><i class="fa-solid fa-heart heart"></i></a>
+        <a href="#cartList"><i class="fa-solid fa-cart-shopping"></i></a>
+        <a href="#login"><i class="fa-solid fa-user profile"></i></a>
       </div>
     </nav>
     <div id="content"></div>
@@ -53,12 +61,11 @@
     <script>
       AOS.init({
         duration: 1000,
-        once: true,            // animate only once
-        offset: 150,           // wait until scrolling 150px
+        once: true, // animate only once
+        offset: 150, // wait until scrolling 150px
       });
     </script>
-    
-    <script src="main.js"></script>
 
+    <script src="main.js"></script>
   </body>
 </html>

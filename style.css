@@ -20,8 +20,8 @@ i{
   cursor: pointer;
 }
 .logo{
-  font-size: 2rem;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  display: flex;
+  gap: 0.5rem;
 }
 .nav-bar {
   display: flex;
@@ -54,16 +54,18 @@ i{
   font-size: 1.5rem;
   display: flex;
   gap: 1rem;
+  align-items: center;
 }
 .nav-link .link-active {
   color: white;
 }
+
 .close-btn {
   font-size: 1.5rem;
   display: none;
   position: absolute;
-  top: 2.5rem;
-  right: 3rem;
+  top: 2.3rem;
+  left: 3rem;
 }
 
 .hero-section {
@@ -183,18 +185,22 @@ i{
 }
 
 /* Responsive Part */
-@media only screen and (max-width: 600px) {
-.nav-bar .nav-link {
+@media only screen and (max-width: 700px) {
+  .nav-bar{
+    padding: 2rem 0;
+  }
+  .nav-bar .nav-link {
     position: fixed;
     top: -100%;              /* hide above viewport */
     left: 0;
     width: 100vw;
     flex-direction: column;
-    gap: 2rem;
+    gap: 5rem;
     background-color: rgba(0, 0, 0, 0.8);
+    height: 100%;
     backdrop-filter: blur(10px);
     padding: 5rem 2rem 5rem 2rem;
-    transition: 1s ease; /* smooth slide */
+    transition: 0.5s ease; /* smooth slide */
     z-index: 1000000;
     opacity: 0;
     align-items: center;
@@ -256,8 +262,10 @@ font-size: 16px;
   width: 100%; /* adjust size of swiper container */
   height: 24rem;
   display: flex;
+  margin-top: 5rem;
   justify-content: center;
   align-items: center;
+  height: auto;
 }
 
 .shopSwiper .swiper-slide {
@@ -273,6 +281,7 @@ font-size: 16px;
   object-fit: contain;
   display: block;
   filter:brightness(0.8);
+  min-width: 350px;
 }
 .swiper-pagination-bullet {
   width: 20px;
@@ -285,6 +294,6 @@ font-size: 16px;
   background: rgba(0, 0, 0, 0.2);
 }
 .swiper-pagination-bullet-active {
-  color: #fff;
-  background: #007aff;
+  color: black;
+  background: white;
 }
