@@ -1,38 +1,37 @@
 // 1. DECLARE VARIABLES FIRST
-const hamburger = document.querySelector(".hamburger");
-const navLink = document.querySelector(".nav-link");
-const closeBtn = document.querySelector(".close-btn");
+const hamburger = document.querySelector('.hamburger');
+const navLink = document.querySelector('.nav-link');
+const closeBtn = document.querySelector('.close-btn');
 
 // 2. LOAD PAGE FUNCTION
 function loadPage() {
-  const hash = location.hash.replace("#", "") || "shop";
-
+  const hash = location.hash.replace('#', '') || 'home';
   // Highlight active link
-  document.querySelectorAll("nav li a").forEach(link => {
+  document.querySelectorAll('nav li a').forEach((link) => {
     link.classList.toggle(
-      "link-active",
-      link.getAttribute("href") === "#" + hash
+      'link-active',
+      link.getAttribute('href') === '#' + hash
     );
   });
 
   fetch(`pages/${hash}.html`)
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById("content").innerHTML = html;
+    .then((res) => res.text())
+    .then((html) => {
+      document.getElementById('content').innerHTML = html;
 
       // Safe check before removing class
-      if (navLink) navLink.classList.remove("active");
+      if (navLink) navLink.classList.remove('active');
 
       // Home page setup
-      if (hash === "home") {
+      if (hash === 'home') {
         startCounterAnimation();
         // Swiper for home
-        if (document.querySelector(".mySwiper")) {
-          new Swiper(".mySwiper", {
+        if (document.querySelector('.mySwiper')) {
+          new Swiper('.mySwiper', {
             loop: true,
             navigation: {
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
+              nextEl: '.swiper-button-next',
+              prevEl: '.swiper-button-prev',
             },
             grabCursor: true,
           });
@@ -40,48 +39,44 @@ function loadPage() {
       }
 
       // About page setup
-      if (hash === "about") {
+      if (hash === 'about') {
         setTimeout(() => {
           AOS.refreshHard();
         }, 50);
       }
+
       // Cart page setup
-      if (hash === "cartList") {
-        loadScriptOnce("Script/cart.js", "cartScript");
-      } else {
-        const cartScript = document.getElementById("cartScript");
-        if (cartScript) cartScript.remove();
+      if (hash === 'cartList') {
+        import('./Script/cart.js').then((mod) => mod.renderCart());
       }
 
       // Shop page setup
-      if (hash === "shop") {
-        var SHopswiper = new Swiper(".shopSwiper", {
+      if (hash === 'shop') {
+        var SHopswiper = new Swiper('.shopSwiper', {
           autoplay: {
             delay: 2500,
             disableOnInteraction: false,
           },
           pagination: {
-            el: ".swiper-pagination",
+            el: '.swiper-pagination',
             clickable: true,
             renderBullet: function (index, className) {
-              return '<span class="' + className + '">' + (index + 1) + "</span>";
+              return (
+                '<span class="' + className + '">' + (index + 1) + '</span>'
+              );
             },
           },
         });
-        loadScriptOnce("Script/shop.js", "shopScript");
-      } else {
-        const shopScript = document.getElementById("shopScript");
-        if (shopScript) shopScript.remove();
+        setTimeout(() => {
+          import('./Script/renderShop.js').then((mod) => mod.renderShop());
+        }, 50);
       }
-
-
     }); // END .then(html => {})
 } // END loadPage()
 
 
 // 3. EVENTS
-
-window.addEventListener("hashchange", loadPage);
+window.addEventListener('hashchange', loadPage);
 loadPage();
 
 window.addEventListener('load', () => {
@@ -89,32 +84,31 @@ window.addEventListener('load', () => {
 });
 
 if (hamburger) {
-  hamburger.addEventListener("click", () => {
-    navLink?.classList.add("active");
-    closeBtn?.classList.add("active");
+  hamburger.addEventListener('click', () => {
+    navLink?.classList.add('active');
+    closeBtn?.classList.add('active');
   });
 }
 
 if (closeBtn) {
-  closeBtn.addEventListener("click", () => {
-    navLink?.classList.remove("active");
-    closeBtn?.classList.remove("active");
+  closeBtn.addEventListener('click', () => {
+    navLink?.classList.remove('active');
+    closeBtn?.classList.remove('active');
   });
 }
 
-window.addEventListener("resize", () => {
+window.addEventListener('resize', () => {
   if (window.innerWidth > 600 && navLink) {
-    navLink.classList.remove("active");
+    navLink.classList.remove('active');
   }
 });
 
-
 // 4. HOME COUNTER FUNCTION
 function startCounterAnimation() {
-  const counters = document.querySelectorAll(".counter");
+  const counters = document.querySelectorAll('.counter');
 
-  counters.forEach(counter => {
-    const target = +counter.getAttribute("data-target");
+  counters.forEach((counter) => {
+    const target = +counter.getAttribute('data-target');
     let count = 0;
     const speed = 100;
 
@@ -130,19 +124,4 @@ function startCounterAnimation() {
 
     update();
   });
-}
-
-
-
-
-
-
-function loadScriptOnce(src, id) {
-  if (document.getElementById(id)) return; // prevent duplicate loading
-
-  const script = document.createElement("script");
-  script.src = src;
-  script.type = "module";
-  script.id = id;
-  document.body.appendChild(script);
 }
