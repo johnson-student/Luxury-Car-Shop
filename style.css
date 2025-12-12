@@ -3,23 +3,26 @@
   margin: 0;
   padding: 0;
 }
-:root{
-  --primary-color:white;
-  --secondary-color:#eeeeee97;
-  --background:#212121;
+:root {
+  --primary-color: white;
+  --secondary-color: #eeeeee97;
+  --background: #212121;
   --accent-color: #007bff;
-  --heading-font:"roboto",Arial, sans-serif;
+  --heading-font: 'roboto', Arial, sans-serif;
 }
 body {
   min-height: 100vh;
-  background-color:#000000;
+  background-color: #000000;
   color: var(--primary-color);
   overflow-x: hidden;
 }
-i{
+::-webkit-scrollbar {
+  display: none;
+}
+i {
   cursor: pointer;
 }
-.logo{
+.logo {
   display: flex;
   gap: 0.5rem;
 }
@@ -93,8 +96,8 @@ i{
   z-index: 1;
 }
 
-.hero-section .title h1{
-  font-size: clamp(3rem, 5vw , 4rem);
+.hero-section .title h1 {
+  font-size: clamp(3rem, 5vw, 4rem);
   font-family: var(--heading-font);
   font-weight: 900;
   line-height: 4rem;
@@ -103,8 +106,8 @@ i{
 .hero-section .title p {
   color: #eeeeee97;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-  'Lucida Sans', Arial, sans-serif;
-  font-size: clamp(2rem,3vw,2.5rem);
+    'Lucida Sans', Arial, sans-serif;
+  font-size: clamp(2rem, 3vw, 2.5rem);
 }
 
 /* .model {
@@ -133,11 +136,11 @@ i{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   margin-bottom: 0.5rem;
   text-wrap: nowrap;
-  font-size: clamp(1.5rem,2vw,2.5rem);
+  font-size: clamp(1.5rem, 2vw, 2.5rem);
 }
 .hero-section .bottom div p {
   color: #eeeeee97;
-  font-size: clamp(0.7rem,2vw,1rem);
+  font-size: clamp(0.7rem, 2vw, 1rem);
   padding: 0 5px;
 }
 
@@ -164,10 +167,10 @@ i{
   object-fit: contain;
   user-select: none;
 }
-.hero-section .swiper-button-next{
+.hero-section .swiper-button-next {
   right: 7rem;
 }
-.hero-section .swiper-button-prev{
+.hero-section .swiper-button-prev {
   left: 7rem;
 }
 .hero-section .swiper-button-next,
@@ -184,14 +187,18 @@ i{
   font-weight: bold;
 }
 
+
 /* Responsive Part */
 @media only screen and (max-width: 700px) {
-  .nav-bar{
+  .nav-bar {
     padding: 2rem 0;
+  }
+  .close-btn {
+    left: 0;
   }
   .nav-bar .nav-link {
     position: fixed;
-    top: -100%;              /* hide above viewport */
+    top: -100%; /* hide above viewport */
     left: 0;
     width: 100vw;
     flex-direction: column;
@@ -204,7 +211,7 @@ i{
     z-index: 1000000;
     opacity: 0;
     align-items: center;
-}
+  }
 
   /* When nav is active (open) */
   .nav-bar .nav-link.active {
@@ -240,25 +247,26 @@ i{
   box-shadow: inset 0px 0px 10px 1px white;
   display: flex;
   align-items: center;
-} 
+}
 .search-box input {
-width: 100%;
-background: transparent;
-padding-left: 50px;
-border: none;
-outline: none;
-color: #fff;
-font-size: 16px;
+  width: 100%;
+  background: transparent;
+  padding-left: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 16px;
 }
 
 .search-box .icon {
   position: absolute;
-  left: 10x;   /* put icon left: 10px if you want it on left */
+  left: 10x; /* put icon left: 10px if you want it on left */
   top: 50%;
   transform: translateY(-50%);
-  pointer-events: none; /* so you can click input */}
+  pointer-events: none; /* so you can click input */
+}
 
-  .shopSwiper {
+.shopSwiper {
   width: 100%; /* adjust size of swiper container */
   height: 24rem;
   display: flex;
@@ -276,11 +284,11 @@ font-size: 16px;
 }
 
 .shopSwiper .swiper-slide img {
-  width: 40%;   /* make car smaller */
+  width: 40%; /* make car smaller */
   height: auto; /* keep proportions */
   object-fit: contain;
   display: block;
-  filter:brightness(0.8);
+  filter: brightness(0.8);
   min-width: 350px;
 }
 .swiper-pagination-bullet {
