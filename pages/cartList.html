@@ -1,0 +1,69 @@
+<div class="pt-28 flex items-center justify-center">
+  <div class="bg-gray-900 w-full max-w-3xl rounded-xl shadow-lg p-6 relative">
+
+    <!-- Close Button -->
+    
+    
+    <a href="#shop" id="closeBtn" class="absolute top-4 right-4 text-gray-400 hover:text-white text-xl">
+      ✕
+    </a>
+
+    <h1 class="text-3xl font-bold mb-6 text-center">Your Cart</h1>
+
+    <!-- Cart Item -->
+    <div class="flex items-center gap-6 bg-gray-800 p-4 rounded-lg">
+
+     <!-- Item Image -->
+      <img src="https://via.placeholder.com/100" 
+           alt="Item"
+           class="w-24 h-24 rounded-lg object-cover shadow-md">
+
+      <!-- Item info -->
+      <div class="flex-1">
+        <h2 class="text-xl font-semibold">Premium Headphones</h2>
+        <p class="text-gray-400 text-sm">Black Edition</p>
+
+        <!-- Quantity Controls -->
+        <div class="flex items-center mt-3">
+          <button class="qty-btn bg-gray-700 px-3 py-1 rounded-l-lg hover:bg-gray-600" data-action="decrease">−</button>
+          <span id="qty" class="bg-gray-700 px-4 py-1">1</span>
+          <button class="qty-btn bg-gray-700 px-3 py-1 rounded-r-lg hover:bg-gray-600" data-action="increase">+</button>
+        </div>
+      </div>
+
+      <!-- Item Price -->
+      <div class="text-right">
+        <p class="text-lg font-bold">$<span id="itemPrice">120</span></p>
+      </div> 
+    </div>
+
+    <!-- Order Summary -->
+    <div class="mt-6 bg-gray-800 p-4 rounded-lg">
+      <h3 class="text-xl font-semibold mb-4">Order Summary</h3>
+
+      <div class="flex justify-between text-gray-300">
+        <p>Subtotal</p>
+        <p>$<span id="subtotal">120</span></p>
+      </div>
+
+      <div class="flex justify-between text-gray-300 mt-2">
+        <p>Tax (10%)</p>
+        <p>$<span id="tax">12</span></p>
+      </div>
+
+      <hr class="border-gray-700 my-3">
+
+      <div class="flex justify-between text-white text-xl font-bold">
+        <p>Total</p>
+        <p>$<span id="total">132</span></p>
+      </div>
+    </div>
+
+    <!-- Checkout Button -->
+    <button 
+      id="checkoutBtn"
+      class="w-full mt-6 bg-blue-600 hover:bg-blue-500 text-white py-3 rounded-lg font-semibold text-lg transition">
+      Checkout
+    </button>
+  </div> 
+</div> 
