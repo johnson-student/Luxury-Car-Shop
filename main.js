@@ -47,7 +47,12 @@ function loadPage() {
 
       // Cart page setup
       if (hash === 'cartList') {
-        import('./Script/cart.js').then((mod) => mod.renderCart());
+        import('./Script/cart.js').then((mod) => mod.renderCarts());
+      }
+
+      // fav page setup
+      if (hash === 'wistList') {
+        import('./Script/fav.js').then((mod) => mod.renderfavs());
       }
 
       // Shop page setup
