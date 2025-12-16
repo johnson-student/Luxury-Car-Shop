@@ -72,9 +72,7 @@ function loadPage() {
             },
           },
         });
-        setTimeout(() => {
-          import('./Script/renderShop.js').then((mod) => mod.renderShop());
-        }, 50);
+        import('./Script/renderShop.js').then((mod) => mod.renderShop());
       }
     }); // END .then(html => {})
 } // END loadPage()
