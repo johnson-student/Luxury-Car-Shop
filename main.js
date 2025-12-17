@@ -25,6 +25,7 @@ function loadPage() {
       // Home page setup
       if (hash === 'home') {
         startCounterAnimation();
+        animatePrice("price", 0, 120000, 1500);
         // Swiper for home
         if (document.querySelector('.mySwiper')) {
           new Swiper('.mySwiper', {
@@ -55,6 +56,20 @@ function loadPage() {
         import('./Script/fav.js').then((mod) => mod.renderfavs());
       }
 
+      if (hash === 'userAccount') {
+        import('./Script/userAccount.js').then((mod) =>
+          mod.renderUserAccount()
+        );
+      }
+
+      if (hash === 'register') {
+        import('./Script/register.js').then((mod) => mod.register());
+      }
+
+      if (hash === 'login') {
+        import('./Script/login.js').then((mod) => mod.login());
+      }
+
       // Shop page setup
       if (hash === 'shop') {
         var SHopswiper = new Swiper('.shopSwiper', {
@@ -72,13 +87,10 @@ function loadPage() {
             },
           },
         });
-        setTimeout(() => {
-          import('./Script/renderShop.js').then((mod) => mod.renderShop());
-        }, 50);
+        import('./Script/renderShop.js').then((mod) => mod.renderShop());
       }
     }); // END .then(html => {})
 } // END loadPage()
-
 
 // 3. EVENTS
 window.addEventListener('hashchange', loadPage);
@@ -130,3 +142,23 @@ function startCounterAnimation() {
     update();
   });
 }
+
+function animatePrice(id, start, end, duration) {
+  const element = document.getElementById(id);
+  let startTime = null;
+
+  function animation(currentTime) {
+    if (!startTime) startTime = currentTime;
+    const progress = Math.min((currentTime - startTime) / duration, 1);
+    const value = Math.floor(progress * (end - start) + start);
+    element.textContent = `$${value.toLocaleString()}`;
+
+    if (progress < 1) {
+      requestAnimationFrame(animation);
+    }
+  }
+
+  requestAnimationFrame(animation);
+}
+
+// Example

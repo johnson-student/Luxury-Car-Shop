@@ -1,0 +1,121 @@
+<div
+  class="fixed inset-0 bg-cover bg-center [background-image:linear-gradient(to_bottom,rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('./assets/images/car-background.jpg')] overflow-auto flex justify-center items-center"
+>
+  <div
+    class="absolute top-28 bg-white/10 backdrop-blur-md rounded-3xl shadow-2xl w-[90%] max-w-6xl p-6 md:p-10 flex flex-col md:flex-row items-center justify-between"
+  >
+    <!-- LEFT: IMAGE -->
+    <div
+      class="bg-black/20 backdrop-blur-lg p-8 rounded-2xl shadow-xl w-full md:w-[40%]"
+    >
+      <img src="./assets/images/logo.png" width="150px" alt="Logo" />
+
+      <h2 class="text-3xl font-bold text-[var(--accent-color)] mb-6">
+        Create Account
+      </h2>
+      <form class="space-y-5" id="register-form">
+        <!-- Full Name -->
+        <div>
+          <label class="text-[var(--secondary-color)] text-sm">Full Name</label>
+          <input
+            required
+            id="name"
+            type="text"
+            placeholder="name"
+            class="mt-1 text-black w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)]"
+          />
+        </div>
+
+
+        <!-- Email -->
+        <div>
+          <label class="text-[var(--secondary-color)] text-sm">Email</label>
+          <input
+            type="email"
+            id="email"
+            required
+            placeholder="you@example.com"
+            class="mt-1 text-black w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)]"
+          />
+        </div>
+
+        <!-- Password -->
+        <div>
+          <label class="text-[var(--secondary-color)] text-sm">Password</label>
+          <input
+            id="password"
+            type="password"
+            required
+            placeholder="Create password"
+            class="mt-1 text-black w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)]"
+          />
+        </div>
+
+        <!-- Confirm Password -->
+        <div>
+          <label class="text-[var(--secondary-color)] text-sm">
+            Confirm Password
+          </label>
+          <input
+            id="confirm-password"
+            type="password"
+            required
+            placeholder="Confirm password"
+            class="mt-1 text-black w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[var(--accent-color)]"
+          />
+        </div>
+
+        <!-- Register -->
+        <button
+          type="submit"
+          class="w-full py-2 bg-[var(--accent-color)] hover:bg-[var(--accent-color)] text-white rounded-lg font-medium"
+        >
+          Register
+        </button>
+
+        <!-- Divider -->
+        <div class="flex items-center gap-4">
+          <div class="flex-1 h-px bg-gray-300"></div>
+          <p class="text-[var(--secondary-color)] text-sm">Or Sign Up With</p>
+          <div class="flex-1 h-px bg-gray-300"></div>
+        </div>
+
+        <!-- Social buttons -->
+        <div class="flex items-center justify-center gap-4">
+          <button
+            class="bg-white shadow rounded-full flex justify-center items-center w-10 h-10"
+          >
+            <i class="fa-brands fa-google text-black fa-xl"></i>
+          </button>
+          <button
+            class="bg-white shadow rounded-full flex justify-center items-center w-10 h-10"
+          >
+            <i class="fa-brands fa-apple text-black fa-xl"></i>
+          </button>
+          <button
+            class="bg-white shadow rounded-full flex justify-center items-center w-10 h-10"
+          >
+            <i class="fa-brands fa-facebook-f text-black fa-xl"></i>
+          </button>
+        </div>
+
+        <p class="text-sm text-center text-[var(--secondary-color)]">
+          Already have an account?
+          <a
+            href="#login"
+            class="text-blue-400 font-semibold cursor-pointer hover:underline"
+          >
+            Log in
+          </a>
+        </p>
+      </form>
+      
+    </div>
+    <!-- RIGHT: REGISTER FORM -->
+    <div
+      class="min-w-[400px] md:w-1/2 flex justify-center"
+    >
+      <img src="./assets/images/optimus-prime.png" class="w-[90%]" />
+    </div>
+  </div>
+</div>
