@@ -1,4 +1,4 @@
-<!-- <div class="pt-28 pb-28 left-0 grid-rows-2 fixed left-0 top-1/2-translate-y-1/2 w-16 h-full">
+<!-- <div class="pt-28 pb-28 left-0 grid-rows-2 absolute left-0 bg-white top-1/2-translate-y-1/2 w-16 h-full" data-aos="fade-in-left">
   <div class=" w-8 md:w-10 lg:w-16 h-[50%] backdrop-blur-xl border border-white/10
               rounded-r-3xl flex items-center justify-center shadow-[inset_0px_0px_10px_0px]">
 
@@ -6,21 +6,42 @@
           <i class="fas fa-shopping-cart text-xl"></i>
       </button>
   </div>
+ </div> -->
 
-  <div class="w-8 md:w-10 lg:w-16 h-[50%] backdrop-blur-xl border border-white/10
-              rounded-r-3xl flex flex-col items-center justify-center shadow-[inset_0px_0px_10px_0px]">
 
-      <button class="text-white hover:text-blue-400 transition">
-          <i class="fas fa-heart text-xl"></i>
-      </button>
+<div class=" gap-10 shop flex flex-col mx-auto justify-center pt-28">
 
-  </div> -->
-
-<!-- </div> -->
-
-<div class=" gap-10 shop flex flex-col mx-auto justify-center bg-[url('./assets/images/shopbg.png')] bg-cover bg-center pt-28">
+<!-- background -->
+  <div class="-z-50 bg-[url('./assets/images/shopbg.png')] opacity-[50%] bg-cover bg-center fixed w-full h-full inset-0"></div>
+  
   <!-- pano scroller -->
-    <div class="swiper shopSwiper z-0 ">
+    <div class="swiper shopSwiper z-0">
+
+      <!-- side light -->
+      <div class=" z-50 w-[1px] md:w-[2px] absolute bg-gradient-to-r from-purple-600 via-purple-300 via-white to-purple-800  left-0 lg:w-[4px] h-[80%] rounded-r-3xl shadow-[0px_0px_10px_0px_white]"
+        style="
+          box-shadow:
+            0 0 2px 1px #A78BFA,
+            0 0 14px 2px #C4B5FD,
+            0 0 26px 8px #D8B4FE;
+          animation: glowPulse 1s ease-in-out infinite;">
+
+      </div>
+      <div class=" z-50 w-[1px] md:w-[2px] absolute bg-gradient-to-r from-purple-600 via-purple-300 via-white to-purple-800  right-0 lg:w-[4px] h-[80%] rounded-l-3xl shadow-[0px_0px_10px_0px_white]"
+        style="
+          box-shadow:
+            0 0 2px 1px #A78BFA,
+            0 0 14px 2px #C4B5FD,
+            0 0 26px 8px #D8B4FE;
+          animation: glowPulse 1s ease-in-out infinite;">
+
+      </div>
+      <h1 class="absolute top-10 left-[40%] -translate-x-[90%] text-white text-[clamp(2.2rem,5vw,4rem)] font-bold text-center">
+        Modern Super Cars
+      </h1>
+
+      
+      <!-- img slide -->
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <img src="./assets/images/Bugatti.png" alt="">
@@ -51,7 +72,7 @@
   </div>
 
   <!-- search bar -->
-  <div class="search-box backdrop-blur-[5px]">
+  <div class="search-box backdrop-blur-[2px] z-100 ">
     <span class="icon">
       <svg class="w-6 h-6 text-gray-400 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
         <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/>
@@ -82,3 +103,19 @@
   
 </div>
 
+<style>
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 2px 1px #A78BFA,
+      0 0 4px 2px #C4B5FD,
+      0 0 18px 8px #D8B4FE;
+  }
+  50% {
+    box-shadow:
+      0 0 5px 2px #C4B5FD,
+      0 0 10px 4px #D8B4FE,
+      0 0 26px 10px #EDE9FE;
+  }
+}
+</style>

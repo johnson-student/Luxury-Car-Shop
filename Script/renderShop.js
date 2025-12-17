@@ -5,19 +5,19 @@ export function renderShop() {
   products.forEach((car, i) => {
     const num = i + 1;
     grid.innerHTML += `
-      <div data-id="c${num}" data-name="${car.name}" data-info="${car.detail}" class=" card rounded-3xl shadow-[inset_0px_0px_15px] p-6 w-60 border border-neutral-800 text-white hover:shadow-[0px_0px_10px_1px] transition duration-1000 hover:scale-105 hover:backdrop-blur-[3px]">
+      <div data-id="c${num}"  data-name="${car.name}" data-info="${car.detail}" class=" card  rounded-3xl shadow-[inset_0px_0px_15px] p-6 w-60 border border-neutral-800 text-white hover:shadow-[0px_0px_10px_1px] hover:scale-105 transition duration-1000">
         
-        <div class="flex items-center justify-between mb-4">
+        <div class="flex items-center justify-between mb-4" >
           <h3 class="text-sm font-bold tracking-wider">${car.name}</h3>
           <div class="flex gap-1 text-xl">
             <span class="cursor-pointer">
-              <svg class="addCart  w-5 active:text-red-500 text-white hover:scale-[135%] " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+              <svg class="addCart  w-5 active:text-red-500 text-white hover:scale-[135%] transition duration-500 " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
               <path fill-rule="evenodd" d="M4 4a1 1 0 0 1 1-1h1.5a1 1 0 0 1 .979.796L7.939 6H19a1 1 0 0 1 .979 1.204l-1.25 6a1 1 0 0 1-.979.796H9.605l.208 1H17a3 3 0 1 1-2.83 2h-2.34a3 3 0 1 1-4.009-1.76L5.686 5H5a1 1 0 0 1-1-1Z" clip-rule="evenodd"/>
               </svg>
             </span>
           
             <span class="cursor-pointer">
-              <svg class="addFav active:text-red-500 w-5 text-white hover:scale-[135%]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+              <svg class="addFav active:text-red-500 w-5 text-white hover:scale-[135%] transition duration-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
               <path d="m12.75 20.66 6.184-7.098c2.677-2.884 2.559-6.506.754-8.705-.898-1.095-2.206-1.816-3.72-1.855-1.293-.034-2.652.43-3.963 1.442-1.315-1.012-2.678-1.476-3.973-1.442-1.515.04-2.825.76-3.724 1.855-1.806 2.201-1.915 5.823.772 8.706l6.183 7.097c.19.216.46.34.743.34a.985.985 0 0 0 .743-.34Z"/>
               </svg>
             </span>
@@ -65,7 +65,7 @@ export function renderShop() {
   const searchInput = document.getElementById('searchInput');
   const cards = document.querySelectorAll('.card');
   let debounceTimer = null;
-
+  
   searchInput.addEventListener('input', () => {
     const value = searchInput.value.toLowerCase();
 

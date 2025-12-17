@@ -276,15 +276,16 @@ i {
 }
 
 .shopSwiper .swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  place-items: center;
+  grid-template-rows: 24rem;
   background: transparent !important;
 }
 
 .shopSwiper .swiper-slide img {
   width: 40%; /* make car smaller */
   height: auto; /* keep proportions */
+  margin-top: 20px;
   object-fit: contain;
   display: block;
   filter: brightness(0.8);
