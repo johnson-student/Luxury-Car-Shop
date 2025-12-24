@@ -335,3 +335,45 @@ i {
     transform: translateX(-50%);
   }
 }
+
+
+.price-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #eeeeee97;
+}
+
+/* "from $" text */
+.price-line .from {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  white-space: nowrap;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: 700;
+}
+
+.digit-container {
+
+  width: 1ch;
+  height: 3.5rem; /* 🔑 fixed height */
+  overflow: hidden;
+  position: relative;
+}
+
+.digit-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 1s ease-out;
+}
+
+.digit-inner div {
+  height: 3.5rem; /* 🔑 SAME as container */
+  line-height: 3.5rem; /* 🔑 centers text */
+  text-align: center;
+}

@@ -2,7 +2,6 @@
 const hamburger = document.querySelector('.hamburger');
 const navLink = document.querySelector('.nav-link');
 const closeBtn = document.querySelector('.close-btn');
-
 // 2. LOAD PAGE FUNCTION
 function loadPage() {
   const hash = location.hash.replace('#', '') || 'home';
@@ -25,7 +24,7 @@ function loadPage() {
       // Home page setup
       if (hash === 'home') {
         startCounterAnimation();
-        animatePrice("price", 0, 120000, 1500);
+        animatePriceOnce('145,999', 1000);
         // Swiper for home
         if (document.querySelector('.mySwiper')) {
           new Swiper('.mySwiper', {
@@ -143,22 +142,44 @@ function startCounterAnimation() {
   });
 }
 
-function animatePrice(id, start, end, duration) {
-  const element = document.getElementById(id);
-  let startTime = null;
+function animatePriceOnce(finalValue) {
+  const priceEl = document.getElementById('price');
+  if (!priceEl) return;
 
-  function animation(currentTime) {
-    if (!startTime) startTime = currentTime;
-    const progress = Math.min((currentTime - startTime) / duration, 1);
-    const value = Math.floor(progress * (end - start) + start);
-    element.textContent = `$${value.toLocaleString()}`;
+  priceEl.innerHTML = '';
 
-    if (progress < 1) {
-      requestAnimationFrame(animation);
+  const digitHeight = 3.5; // em (MATCH CSS)
+
+  finalValue.split('').forEach((char) => {
+    // 👉 COMMA (static, no animation)
+    if (char === ',') {
+      const comma = document.createElement('span');
+      comma.textContent = ',';
+      comma.style.margin = '0 0.15em';
+      priceEl.appendChild(comma);
+      return;
     }
-  }
 
-  requestAnimationFrame(animation);
+    // 👉 DIGIT (animated)
+    const digit = Number(char);
+
+    const container = document.createElement('div');
+    container.className = 'digit-container';
+
+    const inner = document.createElement('div');
+    inner.className = 'digit-inner';
+
+    for (let i = 0; i <= digit; i++) {
+      const d = document.createElement('div');
+      d.textContent = i;
+      inner.appendChild(d);
+    }
+
+    container.appendChild(inner);
+    priceEl.appendChild(container);
+
+    requestAnimationFrame(() => {
+      inner.style.transform = `translateY(-${digit * digitHeight}rem)`;
+    });
+  });
 }
-
-// Example
