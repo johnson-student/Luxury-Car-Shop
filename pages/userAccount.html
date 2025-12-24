@@ -1,0 +1,59 @@
+<section class="pt-32 pb-20 max-w-7xl mx-auto px-6 text-white">
+  <!-- Header -->
+  <div class="flex justify-between items-center mb-10">
+    <div>
+      <h1 class="text-3xl font-bold">My Dashboard</h1>
+      <p class="text-gray-400">Manage your profile, orders, and favorites</p>
+    </div>
+
+    <button
+      id="logout"
+      class="bg-red-500 px-4 py-2 rounded-lg hover:bg-red-600"
+    >
+      Logout
+    </button>
+  </div>
+
+  <!-- Welcome -->
+  <div class="mb-10 bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-lg">
+    <h2 class="text-2xl font-semibold mb-2">Welcome <span class="name text-blue-500"></span></h2>
+    <p class="text-gray-300">
+      You’re logged in successfully. Enjoy exploring premium vehicles.
+    </p>
+  </div>
+  <!-- Cards -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- Profile -->
+    <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-lg">
+      <h3 class="text-xl font-semibold mb-2">Profile</h3>
+      <p class="text-gray-300 mb-4">View and update your personal details</p>
+      <button
+        class="bg-blue-500 text-black px-4 py-2 rounded-lg font-semibold hover:bg-blue-400"
+      >
+        View Profile
+      </button>
+    </div>
+
+    <!-- Orders -->
+    <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-lg">
+      <h3 class="text-xl font-semibold mb-2">My Orders</h3>
+      <p class="text-gray-300 mb-4">Track your purchased vehicles</p>
+      <button
+        class="bg-blue-500 text-black px-4 py-2 rounded-lg font-semibold hover:bg-blue-400"
+      >
+        View Orders
+      </button>
+    </div>
+
+    <!-- Favorites -->
+    <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-lg">
+      <h3 class="text-xl font-semibold mb-2">Favorites</h3>
+      <p class="text-gray-300 mb-4">Cars you’ve saved for later</p>
+      <button
+        class="bg-blue-500 text-black px-4 py-2 rounded-lg font-semibold hover:bg-blue-400"
+      >
+        View Favorites
+      </button>
+    </div>
+  </div>
+</section>

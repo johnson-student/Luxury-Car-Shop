@@ -16,12 +16,14 @@
 
       <h2 class="text-3xl font-bold text-[var(--accent-color)] mb-6">Login</h2>
 
-      <form class="space-y-5">
+      <form class="space-y-5" id="login-form">
         <!-- Email -->
         <div>
-          <label class="text-[var(--secondary-color)]  text-sm">Email or Username</label>
+          <label class="text-[var(--secondary-color)]  text-sm">Email</label>
           <input
             type="email"
+            required
+            id="login-email"
             placeholder="username@gmail.com"
             class="mt-1 text-black w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:var(--accent-color)"
           />
@@ -32,6 +34,8 @@
           <label class="text-[var(--secondary-color)]  text-sm">Password</label>
           <input
             type="password"
+            required
+            id="login-password"
             placeholder="Password"
             class="mt-1 w-full px-4 py-2 text-black rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:var(--accent-color)"
           />
@@ -44,7 +48,8 @@
 
         <!-- Sign in -->
         <button
-          class="w-full py-2 bg-[var(--accent-color)] hover:bg-[var(--accent-color)] text-white rounded-lg font-medium"
+          class="w-full py-2 bg-[var(--accent-color)] hover:bg-blue-600 text-white rounded-lg font-medium"
+          type="submit"
         >
           Sign In
         </button>
@@ -58,29 +63,21 @@
 
         <!-- Social buttons -->
         <div class="flex items-center justify-center gap-4">
-          <button class="bg-white shadow rounded-full p-2">
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
-              class="w-5"
-            />
+          <button class="bg-white shadow rounded-full flex justify-center items-center w-10 h-10 ">
+            <i class="fa-brands fa-google text-black fa-xl" ></i>
           </button>
-          <button class="bg-white shadow rounded-full p-2">
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg"
-              class="w-5"
-            />
+          <button class="bg-white shadow rounded-full flex justify-center items-center w-10 h-10 ">
+            <i class="fa-brands fa-apple text-black fa-xl" ></i>
           </button>
-          <button class="bg-white shadow rounded-full p-2">
-            <img
-              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg"
-              class="w-5"
-            />
+          <button class="bg-white shadow rounded-full flex justify-center items-center w-10 h-10 ">
+            <i class="fa-brands fa-facebook-f text-black fa-xl" ></i>
           </button>
+          
         </div>
 
         <p class="text-sm text-center text-[var(--secondary-color)]">
           Don't have an account yet?
-          <a class="text-blue-400  font-semibold cursor-pointer hover:underline"
+          <a href="#register" class="text-blue-400  font-semibold cursor-pointer hover:underline"
             >Register for free</a
           >
         </p>

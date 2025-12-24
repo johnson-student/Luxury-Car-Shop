@@ -315,27 +315,18 @@ i {
 .track {
   display: flex;
   width: max-content;
-  animation: scroll 15s linear infinite;
+  animation: scroll 25s linear infinite;
 }
 .track:hover {
   animation-play-state: paused;
 }
 .team-card {
   flex: 0 0 auto;
-  width: clamp(150px, 25vw, 300px); /* responsive width */
-  width: 200px;
+  width: clamp(200px, 25vw, 300px); /* responsive width */
   margin: 0 1rem;
   border: 1px solid black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
   border-radius: 10px;
 }
-.team-card img {
-  width: 200px;
-}
-
 /* animation */
 @keyframes scroll {
   from {

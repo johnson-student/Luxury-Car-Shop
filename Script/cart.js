@@ -45,7 +45,7 @@ export function renderCarts() {
         // Decrease quantity
         div.querySelector(".decrease").addEventListener("click", () => {
           item.qty -= 1;
-          if (item.qty <= 0) {
+          if (item.qty < 0) {
             cart = cart.filter(i => i.id !== item.id);
           }
           saveAndRender();
@@ -71,6 +71,7 @@ export function renderCarts() {
 
     // Update order summary
     function updateSummary() {
+      
       const items = cart.length;
       const totalQty = cart.reduce((sum, i) => sum + Number(i.qty || 0), 0);
       const totalPrice = cart.reduce((sum, i) => {
@@ -85,6 +86,19 @@ export function renderCarts() {
 
     // Checkout button
     checkoutBtn.addEventListener("click", () => {
+
+      const json = localStorage.getItem('user');
+
+       if (!json) {
+        window.location.hash = "#login";
+        return;
+      }
+      const user = JSON.parse(json);
+        if (!user.isLogin) {
+        window.location.hash = "#login";
+        return;
+      }
+
       if (cart.length === 0) {
         alert("Your cart is empty!");
         return;

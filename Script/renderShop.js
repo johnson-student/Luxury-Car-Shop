@@ -5,7 +5,7 @@ export function renderShop() {
   products.forEach((car, i) => {
     const num = i + 1;
     grid.innerHTML += `
-      <div data-id="c${num}"  data-name="${car.name}" data-info="${car.detail}" class=" card  rounded-3xl shadow-[inset_0px_0px_15px] p-6 w-60 border border-neutral-800 text-white hover:shadow-[0px_0px_10px_1px] hover:scale-105 transition duration-1000">
+      <div data-id="c${num}" data-speed="${car.speed}" data-fuel="${car.fuel}" data-gear="${car.gear}" data-name="${car.name}" data-info="${car.detail}" class=" card  rounded-3xl shadow-[inset_0px_0px_15px] p-6 w-60 border border-neutral-800 bg-transparent text-white hover:shadow-[0px_0px_10px_1px] hover:scale-105 backdrop-blur-[2px] transition duration-1000">
         
         <div class="flex items-center justify-between mb-4" >
           <h3 class="text-sm font-bold tracking-wider">${car.name}</h3>
@@ -43,7 +43,7 @@ export function renderShop() {
             <img src="./assets/icons/Gas.png" width="25" class="mb-2 mx-auto">
             <p class="text-[10px]">${car.fuel}</p>
           </div>
-          <div>
+          <div data-gear="${car.gear}">
             <img src="./assets/icons/gear.png" width="25" class="mb-2 mx-auto">
             <p class="text-[10px]">${car.gear}</p>
           </div>
@@ -88,14 +88,29 @@ export function renderShop() {
     const modal = document.getElementById("viewMe");
 
     modal.innerHTML = `
-      <div class="bg-neutral-900 flex flex-col justify-center items-centern shadow-[inset_-5px_-4px_5px_1px_black,5px_4px_15px_5px_black] text-white p-6 rounded-xl relative w-[60%] h-[60%]">
+      <div class="bg-neutral-900 flex flex-col justify-center items-centern shadow-[inset_-5px_-4px_5px_1px_black,5px_4px_15px_5px_black] text-white p-6 rounded-xl relative w-[60%] h-[65%]">
         <h2 class=" absolute top-[5%] left-[5%] text-2xl mb-4">${card.dataset.name}</h2>
         <button id="close" class="closeMe absolute top-[5%] right-[5%] text-center text-gray-400 w-[30px] h-[30px] text-center rounded-full hover:text-white text-xl hover:scale-110 hover:shadow-[inset_0_0_5px_white]" >
-          <i class="fas fa-times ">
-        </i></button>
-        <img src="${card.querySelector("img").src}" class="mx-auto w-1/2"><br>
-        <h2 class="text-justify">${card.dataset.info}</h2>
-        <button class="addCart mt-10 bg-neutral-800  px-5 py-1 rounded-full rounded-br-[300px] text-lg font-semibold shadow-md hover:shadow-[0_0_10px_1px_white] transition duration-500" >Add To Cart </button>
+          <i class="fas fa-times "></i>
+        </button>
+        <img src="${card.querySelector("img").src}" class="mx-auto mt-10 w-1/2"><br>
+        <h2 class="text-justify w-[80%] mx-auto">${card.dataset.info}</h2>
+          
+        <div class="flex justify-evenly text-center mb-4 mt-6">
+          <div>
+            <img src="./assets/icons/speed.png" width="25" class="mb-2 mx-auto">
+            <p class="text-[10px]">${card.dataset.speed}</p>
+          </div>
+          <div>
+            <img src="./assets/icons/Gas.png" width="25" class="mb-2 mx-auto">
+            <p class="text-[10px]">${card.dataset.fuel}</p>
+          </div>
+          <div>
+            <img src="./assets/icons/gear.png" width="25" class="mb-2 mx-auto">
+            <p class="text-[10px]">${card.dataset.gear}</p>
+          </div>
+        </div>
+        <button class="addCart bg-neutral-800  px-5 py-1 rounded-full text-lg font-semibold shadow-md hover:shadow-[0_0_10px_1px_white] transition duration-500" >Add To Cart </button>
       </div>`;
       
     viewMe.classList.remove("invisible");
